@@ -1,1 +1,5 @@
-<p *ngFor="let song of songs">Artist:{{song.artist}} Song name:{{song.name}} Votes:{{song.votes}}</p>
+<p *ngFor="let song of songs">
+    Artist:{{song.artist}} Song name:{{song.name}} Votes:{{song.votes}}
+    <app-button text="Vote" (click)="onVote(song)"></app-button>
+    <app-button text="Delete" (click)="onDelete(song)"></app-button>
+</p>

@@ -14,4 +14,21 @@ export class SongService {
   {
     return this.http.get<Song[]>(this.apiUrl);
   }
+  deleteSong(song:Song):Observable<Song>
+  {
+    const url = `${this.apiUrl}/${song.id}`;
+    return this.http.delete<Song>(url);
+  }
+  voteSong(song:Song):Observable<Song>
+  {
+    const url = `${this.apiUrl}/${song.id}`;
+    const httpOptions = {
+      headers: new HttpHeaders(
+        {
+          'Content-Type':'application/json'
+        }
+      )
+    };
+    return this.http.put<Song>(url,song,httpOptions);
+  }
 }
