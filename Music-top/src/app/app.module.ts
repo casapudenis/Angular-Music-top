@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { TodoComponent } from './components/todo/todo.component';
+import { FormComponent } from './components/form/form.component';
+import { ButtonComponent } from './components/button/button.component';
+import { SongsComponent } from './components/songs/songs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent,
+    FormComponent,
+    ButtonComponent,
+    SongsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
