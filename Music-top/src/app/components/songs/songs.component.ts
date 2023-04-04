@@ -20,7 +20,7 @@ export class SongsComponent implements OnInit{
     };
   }
   ngOnInit(): void {
-    this.songService.getSongs().subscribe((songs) => (this.songs = songs));
+    this.songService.getSongs().subscribe((songs) => (this.songs = songs,console.log(songs)));
   }
   onDelete(song:Song)
   {

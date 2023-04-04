@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FormComponent } from './components/form/form.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SongsComponent } from './components/songs/songs.component';
 import { AddSongComponent } from './components/add-song/add-song.component';
@@ -12,7 +11,6 @@ import { AddSongComponent } from './components/add-song/add-song.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
     ButtonComponent,
     SongsComponent,
     AddSongComponent
