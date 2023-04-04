@@ -1,3 +1,4 @@
+<app-add-song (onAddSong)="addSong($event)"></app-add-song>
 <p *ngFor="let song of songs">
     Artist:{{song.artist}} Song name:{{song.name}} Votes:{{song.votes}}
     <app-button text="Vote" (click)="onVote(song)"></app-button>

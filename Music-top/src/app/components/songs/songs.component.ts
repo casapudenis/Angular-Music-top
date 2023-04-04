@@ -16,8 +16,7 @@ export class SongsComponent implements OnInit{
       artist: '',
       name:'',
       date:'',
-      votes: 0,
-      songid: 0
+      votes: 0
     };
   }
   ngOnInit(): void {
@@ -31,5 +30,9 @@ export class SongsComponent implements OnInit{
   {
     song.votes++;
     this.songService.voteSong(song).subscribe((song) => (this.song = song));
+  }
+  addSong(song:Song)
+  {
+    this.songService.addSong(song).subscribe((song)=>(this.songs.push(song)));
   }
 }

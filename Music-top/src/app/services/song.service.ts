@@ -8,7 +8,7 @@ import { Song } from '../songs'
   providedIn: 'root'
 })
 export class SongService {
-  private apiUrl = 'https://rapid-fine-mask.glitch.me/melodii/';
+  private apiUrl = 'https://overjoyed-sulky-charger.glitch.me/melodii';
   constructor(private http: HttpClient) { }
   getSongs():Observable<Song[]>
   {
@@ -30,5 +30,9 @@ export class SongService {
       )
     };
     return this.http.put<Song>(url,song,httpOptions);
+  }
+  addSong(song:Song):Observable<Song>
+  {
+    return this.http.post<Song>(this.apiUrl,song);
   }
 }
