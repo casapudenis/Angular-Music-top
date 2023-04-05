@@ -20,7 +20,7 @@ export class SongsComponent implements OnInit{
     };
   }
   ngOnInit(): void {
-    this.songService.getSongs().subscribe((songs) => (this.songs = songs,console.log(songs)));
+    this.songService.getSongs().subscribe((songs) => (this.songs = songs,this.songs.sort((a, b) => b.votes - a.votes)));
   }
   onDelete(song:Song)
   {
@@ -29,6 +29,7 @@ export class SongsComponent implements OnInit{
   onVote(song:Song)
   {
     song.votes++;
+    this.songs.sort((a, b) => b.votes - a.votes);
     this.songService.voteSong(song).subscribe((song) => (this.song = song));
   }
   addSong(song:Song)
